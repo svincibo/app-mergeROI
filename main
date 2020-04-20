@@ -4,12 +4,6 @@
 #PBS -l walltime=00:20:00
 #PBS -l vmem=30gb
 
-module load matlab/2019a
-
-matlab -nosplash -nodisplay -r mergeROI
-if [ ! -d ./output/rois ]; then
-       echo "mergeROI didn't produce an output roi"
-       exit 1
-fi
+singularity exec -e docker://brainlife/mcr:r2019a ./compiled/mergeROI
 
 echo "all done"
