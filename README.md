@@ -33,7 +33,10 @@ You can submit this App online at [https://doi.org/10.25663/brainlife.app.314](h
 
 ```json
 {
-"rois": "testdata/rois/",
+"roi": ["data/rois/"],
+"roi1_name": ["ROI000012172"],
+"roi2_name": ["ROI000012157"],
+"roiout_name": ["hippocampus"]
 }
 ```
 
