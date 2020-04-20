@@ -7,7 +7,7 @@
 module load matlab/2019a
 
 matlab -nosplash -nodisplay -r mergeROI
-if [ ! -f ./output/roi.nii.gz ]; then
+if [ ! -d ./output/rois ]; then
        echo "mergeROI didn't produce an output roi"
        exit 1
 fi
