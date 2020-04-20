@@ -32,18 +32,16 @@ end
 config = loadjson('config.json.sample');
 
 % Get available rois.
-rois_avail = dir(config(1).rois{1});
+rois_avail = dir(config.rois);
 
 % Remove the '.' and '..' files.
 rois_avail = rois_avail(arrayfun(@(x) x.name(1), rois_avail) ~= '.');
 
 % Update user.
-temp_name = config(1).roi1_name{1};
-disp(['Reading: ' temp_name{1} '...'])
-clear temp_name
+disp(['Reading: ' config.roi1_name '...'])
 
 % ROI1: Get the index of the first roi requested.
-roi1_idx = find(contains({rois_avail.name}, config(1).roi1_name{1}));
+roi1_idx = find(contains({rois_avail.name}, config.roi1_name));
 
 % ROI1: Read in data for the first roi.
 roi1 = niftiRead(fullfile(rois_avail(roi1_idx).folder, rois_avail(roi1_idx).name));
@@ -54,12 +52,10 @@ if size(roi1_idx, 2) ~= 1
 end
 
 % Update user.
-temp_name = config(1).roi2_name{1};
-disp(['Reading: ' temp_name{1} '...'])
-clear temp_name
+disp(['Reading: ' config.roi2_name '...'])
 
 % ROI2: Get the index of the second roi requested.
-roi2_idx = find(contains({rois_avail.name}, config(1).roi2_name{1}));
+roi2_idx = find(contains({rois_avail.name}, config.roi2_name));
 if size(roi2_idx, 2) ~= 1
     error('Please check that the name of the second requested ROI is the name of one (and only one) of the rois within the ROI datatype supplied.');
 end
@@ -95,12 +91,8 @@ if ~exist('output'); mkdir output; end
 % Make the output/rois directory if it does not exist.
 if ~exist('output/rois'); mkdir output/rois; end
 
-% Get output string.
-temp = strcat(config(1).roiout_name{1}, '.nii.gz');
-
 % Write out nifti containing merged roi.
-niftiWrite(roi1, fullfile('output/rois', temp{1}))
-clear temp
+niftiWrite(roi1, fullfile('output/rois', strcat(config.roiout_name, '.nii.gz')))
 
 % Update user.
 disp('Finished writing merged ROI file.')

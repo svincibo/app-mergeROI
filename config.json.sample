@@ -1,6 +1,6 @@
 {
-"rois": ["data/rois/"],
-"roi1_name": ["ROI000012172"],
-"roi2_name": ["ROI000012157"],
-"roiout_name": ["hippocampus"]
+"roi1_name": "ROI000012172",
+"roi2_name": "ROI000012157",
+"roiout_name": "hippocampus",
+"rois": "testdata/rois/"
 }
