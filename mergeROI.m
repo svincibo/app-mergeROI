@@ -29,7 +29,7 @@ if ~isdeployed
 end
 
 % Read in config.json.
-config = loadjson('config.json.sample');
+config = loadjson('config.json');
 
 % Get available rois.
 rois_avail = dir(config.rois);
