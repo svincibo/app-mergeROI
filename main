@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:20:00
+#PBS -l vmem=30gb
+
+module load matlab/2019a
+
+matlab -nosplash -nodisplay -r mergeROI
+if [ ! -f ./output/roi.nii.gz ]; then
+       echo "mergeROI didn't produce an output roi"
+       exit 1
+fi
+
+echo "all done"
