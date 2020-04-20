@@ -29,10 +29,10 @@ if ~isdeployed
 end
 
 % Read in config.json.
-config = loadjson('config.json');
+config = loadjson('config.json.sample');
 
 % Get available rois.
-rois_avail = dir(config(1).roi{1});
+rois_avail = dir(config(1).rois{1});
 
 % Remove the '.' and '..' files.
 rois_avail = rois_avail(arrayfun(@(x) x.name(1), rois_avail) ~= '.');
