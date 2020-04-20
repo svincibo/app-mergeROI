@@ -40,8 +40,13 @@ rois_avail = rois_avail(arrayfun(@(x) x.name(1), rois_avail) ~= '.');
 % Update user.
 disp(['Reading: ' config.roi1_name '...'])
 
-% ROI1: Get the index of the first roi requested.
-roi1_idx = find(contains({rois_avail.name}, config.roi1_name));
+% ROI1: Get the index of the second roi requested. Account for possibility
+% that the user entered the .nii.gz at the end.
+if endsWith(config.roi1_name, '.nii.gz')
+    roi1_idx = find(strcmp({rois_avail.name}, config.roi1_name));
+else
+    roi1_idx = find(strcmp({rois_avail.name}, [config.roi1_name '.nii.gz']));
+end
 
 % ROI1: Read in data for the first roi.
 roi1 = niftiRead(fullfile(rois_avail(roi1_idx).folder, rois_avail(roi1_idx).name));
@@ -54,8 +59,14 @@ end
 % Update user.
 disp(['Reading: ' config.roi2_name '...'])
 
-% ROI2: Get the index of the second roi requested.
-roi2_idx = find(contains({rois_avail.name}, config.roi2_name));
+% ROI2: Get the index of the second roi requested. Account for possibility
+% that the user entered the .nii.gz at the end.
+if endsWith(config.roi2_name, '.nii.gz')
+    roi2_idx = find(strcmp({rois_avail.name}, config.roi2_name));
+else
+    roi2_idx = find(strcmp({rois_avail.name}, [config.roi2_name '.nii.gz']));
+end
+
 if size(roi2_idx, 2) ~= 1
     error('Please check that the name of the second requested ROI is the name of one (and only one) of the rois within the ROI datatype supplied.');
 end
@@ -91,8 +102,13 @@ if ~exist('output'); mkdir output; end
 % Make the output/rois directory if it does not exist.
 if ~exist('output/rois'); mkdir output/rois; end
 
-% Write out nifti containing merged roi.
-niftiWrite(roi1, fullfile('output/rois', strcat(config.roiout_name, '.nii.gz')))
+% Write out nifti containing merged roi. Account for possibility
+% that the user entered the .nii.gz at the end.
+if endsWith(config.roi2_name, '.nii.gz')
+    niftiWrite(roi1, fullfile('output/rois', config.roiout_name))
+else
+    niftiWrite(roi1, fullfile('output/rois', [config.roiout_name '.nii.gz']))
+end
 
 % Update user.
 disp('Finished writing merged ROI file.')

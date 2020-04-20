@@ -6,4 +6,11 @@
 
 singularity exec -e docker://brainlife/mcr:r2019a ./compiled/mergeROI
 
+#make sure output exists (matlab doesn't set exit code!)
+if [ ! -d output/rois ];
+then
+    echo "output roi folder missing"
+    exit 1
+fi
+
 echo "all done"

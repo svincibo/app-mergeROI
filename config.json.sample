@@ -1,6 +1,6 @@
 {
-"roi1_name": "ROI000012172",
-"roi2_name": "ROI000012157",
+"roi1_name": "ROI_l_ca1",
+"roi2_name": "ROI_l_ca23",
 "roiout_name": "hippocampus",
 "rois": "testdata/rois/"
 }
