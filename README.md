@@ -9,7 +9,7 @@
 
 # app-mergeROI
 
-This app will take one brainlife dataset of the ROI datatype and merge two rois within the ROI dataset into one large ROI. Functionality is restricted to two rois (and not more) for parsimony and rois may overlap with one another.
+This app will take one brainlife dataset of the ROI datatype and merge two rois (or all rois) within the ROI dataset into one large ROI. Rois may overlap with one another.
 
 Users can input a string to tell the app which rois that want to merge. If the user does not specify which rois to merge (i.e., by leaving either field blank), it will merge all rois in the ROI dataset.
 

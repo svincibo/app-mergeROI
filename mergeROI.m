@@ -1,8 +1,7 @@
 function [] = mergeROI()
 
 % This app will take one brainlife dataset of the ROI datatype and merge two
-% rois within the ROI dataset into one large ROI. Functionality is
-% restricted to two rois (and not more) for parsimony and rois may overlap
+% rois (or all rois) within the ROI dataset into one large ROI. Rois may overlap
 % with one another.
 
 % Users can input a string to tell the app which rois that want to merge.
@@ -139,7 +138,7 @@ else % merge all rois
         end
         
         % Merge: Add together.
-        roiout.data = roiout.data + roi(r).data;
+        roiout.data = roiout.data + int16(roi(r).data);
         
     end % for r in rois_avail
 

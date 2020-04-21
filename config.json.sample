@@ -1,6 +1,6 @@
 {
 "roi1_name": "",
 "roi2_name": "",
-"roiout_name": "hippocampus_all",
+"roiout_name": "test",
 "rois": "testdata/rois/"
 }
