@@ -11,7 +11,7 @@
 
 This app will take one brainlife dataset of the ROI datatype and merge two rois within the ROI dataset into one large ROI. Functionality is restricted to two rois (and not more) for parsimony and rois may overlap with one another.
 
-Users can input a string to tell the app which rois that want to merge.
+Users can input a string to tell the app which rois that want to merge. If the user does not specify which rois to merge (i.e., by leaving either field blank), it will merge all rois in the ROI dataset.
 
 NOTE: The rois supplied MUST BE IN ALIGNMENT with one another -- they must be in the same space. If the rois to be merged are not in alignment with one another, then the output of this app will be UNUSABLE (even though the app will not fail to complete).
 

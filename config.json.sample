@@ -1,6 +1,6 @@
 {
-"roi1_name": "ROI_l_ca1",
-"roi2_name": "ROI_l_ca23",
-"roiout_name": "hippocampus",
+"roi1_name": "",
+"roi2_name": "",
+"roiout_name": "hippocampus_all",
 "rois": "testdata/rois/"
 }
