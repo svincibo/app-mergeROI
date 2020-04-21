@@ -1,4 +1,4 @@
-% function [] = mergeROI()
+function [] = mergeROI()
 
 % This app will take one brainlife dataset of the ROI datatype and merge two
 % rois within the ROI dataset into one large ROI. Functionality is
@@ -17,12 +17,10 @@
 % If, for example, the input ROI has 5 rois inside of it and the user asks for
 % ROI1 and ROI2 to be merged, then the output will be an ROI data set
 % with one roi inside. That one roi will comprise all of the voxels from
-% ROI1 and ROI2.
+% ROI1 and ROI2. 
 
 % Dependencies:
 % vistasoft
-
-clear all; clc;
 
 % Setup json lab.
 if ~isdeployed
