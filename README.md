@@ -65,4 +65,7 @@ All output files will be generated under the current working directory (pwd). Th
 
 ### Dependencies
 
-Vistasoft
+This app requires Vistasoft to run. If you do not have Vistasoft, you will need to install the following dependency:
+
+VISTASOFT: https://github.com/vistalab/vistasoft/
+
