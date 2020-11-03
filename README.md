@@ -22,6 +22,14 @@ If, for example, the input ROI has 5 rois inside of it and the user asks for ROI
 [![NSF-BCS-1636893](https://img.shields.io/badge/NSF_BCS-1636893-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1636893)
 [![NIH-T32-HD007475](https://img.shields.io/badge/NIH_T32-HD007475-blue.svg)](https://www.nichd.nih.gov/grants-contracts/training-careers/extramural/institutional)
 
+### Citations
+
+We kindly ask that you cite the following articles when publishing papers and code using this code.
+
+Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). https://doi.org/10.1038/s41597-019-0073-y
+
+MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
+
 ### On Brainlife.io
 
 You can submit this App online at [https://doi.org/10.25663/brainlife.app.314](https://doi.org/10.25663/brainlife.app.314) via the "Execute" tab.
